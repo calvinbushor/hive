@@ -1,0 +1,50 @@
+<style>
+	ul {
+		width: 600px;
+	}
+
+	li { /* width per li is currently 80 */
+		list-style-type: none;
+		overflow: hidden;
+		width: 60px;
+		height: 70px;
+		margin: 10px 10px;
+		display: block;
+		float: left;
+		background: #aaa;
+	}
+	button {
+		width: 50%;
+		height: 40%;
+		float: left;
+	}
+
+	.one {
+		background: red;
+	}
+
+	.two {
+		background: blue;
+	}
+
+	span {
+		display: block;
+		clear: both;
+		height: 16%;
+		margin: 2% 0;
+		text-align: center;
+	}
+</style>
+
+<ul>
+	<li>
+		<button class="one" data-up data-team="one">+</button>
+		<button class="one" data-down data-team="one">-</button>
+
+		<span class="owner">0</span>
+
+		<button class="two" data-up data-team="two">+</button>
+		<button class="two" data-down data-team="two">-</button>
+	</li>
+</ul>
+

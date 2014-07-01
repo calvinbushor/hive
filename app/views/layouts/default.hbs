@@ -1,0 +1,44 @@
+<html>
+	<head>
+	<title>Handlebars examples with Express 4</title>
+	
+</head>
+	<body>
+
+	{{{body}}}
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript">
+		// build the board
+		for ( var i=0; i<41; i++ ) {
+			$('li:last').after($('li:first').clone());
+		}
+
+		// Click handlers for buttons
+		$('[data-up], [data-down]').on('click', function upHandler(e) {
+			var team       = $(this).data('team'),
+				up         = $(this).data('up'),
+				counter    = $(this).parent().find('span'),
+				counterVal = parseInt(counter.html());
+
+			// Increment or decrement
+			counterVal = ( undefined == up ) ? counterVal - 1 : counterVal + 1;
+			// Can only get as low as 0
+			counterVal = (counterVal < 0) ? 0 : counterVal;
+
+			counter
+				.removeClass('one')
+				.removeClass('two')
+				.addClass(team)
+				.html(counterVal.toString());
+
+			if ( 0 == counterVal ) {
+				counter
+					.removeClass('one')
+					.removeClass('two');
+			}
+		});
+	</script>
+	</body>
+</html>
